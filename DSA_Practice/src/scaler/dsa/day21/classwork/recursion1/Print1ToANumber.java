@@ -1,0 +1,87 @@
+package scaler.dsa.day21.classwork.recursion1;
+
+public class Print1ToANumber {
+//	Q4. Print 1 to A function
+//	Problem Description
+//
+//	You are given an integer A, print 1 to A using using recursion.
+//
+//	Note :- After printing all the numbers from 1 to A, print a new line.
+//
+//	Problem Constraints
+//
+//	1 <= A <= 104
+//
+//	Input Format
+//
+//	First argument A is an integer.
+//
+//	Output Format
+//
+//	Print A space-separated integers 1 to A.
+//	Note: There should be exactly one space after each integer. After printing all the integers, print a new line
+	public static void main(String[] args) {
+//		int A=10;
+		int A = 10;
+		solve(A);
+	}
+
+//	public static void solve(int A) {
+//		if(A<1) {
+//			return;
+//		}
+//		System.out.print(A+" ");
+//		solve(A-1);
+//
+//    }
+
+	public static void printAto1(int i, int A) {
+		if (i > A) {
+			return;
+		}
+		System.out.print(i + " ");
+
+		printAto1(i + 1, A);
+	}
+
+	public static void solve(int A) {
+		int i = 1;
+		printAto1(i, A);
+		// below line should be added otherwise its failing
+		System.out.print("\n");
+	}
+}
+
+//Example Input
+//
+//Input 1:
+//
+//A = 10
+//
+//Input 2:
+//
+//A = 5
+//
+//
+//
+//Example Output
+//
+//Output 1:
+//
+//1 2 3 4 5 6 7 8 9 10 
+//
+//Output 2:
+//
+//1 2 3 4 5 
+//
+//
+//
+//Example Explanation
+//
+//Explanation 1:
+//
+//Print 1 to 10 space separated integers.
+//
+//Explanation 2:
+//
+//Print 1 to 5 space separated integers.
